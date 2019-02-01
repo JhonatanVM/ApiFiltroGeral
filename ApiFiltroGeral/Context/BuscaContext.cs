@@ -10,7 +10,7 @@ namespace ApiFiltroGeral.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer("Data Source=LAPTOP-HG2CM099\\SQLEXPRESS;Initial Catalog=Aps8Semestre;Integrated Security=True");
+                .UseSqlServer("Data Source=.;Initial Catalog=Nome;Integrated Security=True");
         }
     }
 }
