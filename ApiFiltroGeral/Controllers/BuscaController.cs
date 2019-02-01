@@ -45,7 +45,7 @@ namespace ApiFiltroGeral.Controllers
             {
                 var result = await _servico.SelecionarPorFiltroAsync(obj);
 
-                if (result.Count() == 0)
+                if (!result.Any())
                     return BadRequest("Nenhum objeto encontrado");
 
                 return Ok(result);

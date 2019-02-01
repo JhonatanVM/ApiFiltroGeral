@@ -21,13 +21,13 @@ namespace ApiFiltroGeral.Repositorio
             var query = _context.Uf.AsQueryable();
 
             if (obj.CodigoIbge.HasValue && obj.CodigoIbge != 0)
-                query = query.Where(x => x.CodigoIbge == obj.CodigoIbge);
+                query = query.Where(x => x.CodigoIbge.ToString().Contains(obj.CodigoIbge.ToString()));
 
             if (!string.IsNullOrEmpty(obj.Nome))
-                query = query.Where(x => x.Nome == obj.Nome);
+                query = query.Where(x => x.Nome.Contains(obj.Nome));
 
             if (!string.IsNullOrEmpty(obj.Sigla))
-                query = query.Where(x => x.Sigla == obj.Sigla);
+                query = query.Where(x => x.Sigla.Contains(obj.Sigla));
 
             var result = await query.ToListAsync();
 

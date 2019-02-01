@@ -20,7 +20,7 @@ namespace ApiFiltroGeral.Validacao
                 .Must(BeAValidFilter)
                 .OnAnyFailure(x =>
                 {
-                    throw new ArgumentException("Dados Inválidos, ao menos um deve ter valor");
+                    throw new ArgumentException("Dados Inválidos, preencha ao menos um campo");
                 });
 
             When(doc => doc.CodigoIbge != null, () =>
@@ -30,7 +30,7 @@ namespace ApiFiltroGeral.Validacao
                     .LessThanOrEqualTo((byte)99)
                     .OnAnyFailure(x =>
                     {
-                        throw new ArgumentException("CodigoIbge deve ser nulo ou estar entre 0 e 100");
+                        throw new ArgumentException("CodigoIbge deve ser nulo ou ser maior que 0 e menor 100");
                     });
             });
 
@@ -49,7 +49,7 @@ namespace ApiFiltroGeral.Validacao
             {
                 RuleFor(doc => doc.Sigla)
                     .Must(HaveOnlyLetter)
-                    .Length(1, 2)
+                    .Length(1,2)
                     .OnAnyFailure(x =>
                     {
                         throw new ArgumentException("Sigla deve ser nulo ou ter 2 letras");
