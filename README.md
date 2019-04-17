@@ -1,10 +1,10 @@
 # ApiFiltroGeral
 
-REST Api de busca geral utilizando os dados de um objeto de filtro.
+Rest API de exemplificação de uma busca por múltiplos itens selecionados em um filtro geral utilizando LINQ.
 
 ### Prerequisites
 
-Para que o projeto funcione � necess�rio alterar a connection string na classe BuscaContext:
+Para que o projeto funcione é necessário alterar a connection string na classe BuscaContext:
 
 ```
 Data Source=.;Initial Catalog=NomeDoBanco;Integrated Security=True
